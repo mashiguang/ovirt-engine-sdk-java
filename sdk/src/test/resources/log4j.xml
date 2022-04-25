@@ -28,7 +28,7 @@ limitations under the License.
   </appender>
 
   <root>
-    <priority value ="DEBUG" />
+    <priority value ="debug" />
     <appender-ref ref="CONSOLE"/>
   </root>
 
