@@ -39,7 +39,8 @@ public class ListVmsCpu {
         VmsService vmsService = connection.systemService().vmsService();
 
         // Use the "list" method of the "vms" service to list all the virtual machines of the system:
-        List<Vm> vms = vmsService.list().send().vms();
+        // follow方法额外加载nics数据
+        List<Vm> vms = vmsService.list().follow("nics").send().vms();
 
         // Print the virtual machine names and identifiers:
         for (Vm vm : vms) {

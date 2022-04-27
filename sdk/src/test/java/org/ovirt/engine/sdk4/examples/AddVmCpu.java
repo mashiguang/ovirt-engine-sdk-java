@@ -18,6 +18,7 @@ package org.ovirt.engine.sdk4.examples;
 
 import org.ovirt.engine.sdk4.Connection;
 import org.ovirt.engine.sdk4.services.VmsService;
+import org.ovirt.engine.sdk4.types.BootDevice;
 
 import static org.ovirt.engine.sdk4.ConnectionBuilder.connection;
 import static org.ovirt.engine.sdk4.builders.Builders.*;
@@ -41,6 +42,7 @@ public class AddVmCpu {
             .vm(
                 vm()
                 .name("myvm")
+                .os(operatingSystem().boot(boot().devices(BootDevice.HD, BootDevice.CDROM))) //创建虚拟机时指定引导序列
                 .cluster(
                     cluster()
                     .name("Default")
